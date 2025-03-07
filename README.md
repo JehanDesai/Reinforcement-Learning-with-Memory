@@ -18,26 +18,26 @@ To train an intelligent audit agent, we implement a Deep Q-Network (DQN) with GR
 GRU (Gated Recurrent Unit) handles sequential data, allowing the agent to retain past information.
 Attention Mechanism enhances decision-making by assigning higher importance to critical risk factors.
 The model architecture includes:
-A GRU layer to process sequential risk data.
-An Attention layer to determine which past states are most relevant.
-Fully connected layers (FC layers) for Q-value prediction.
-During training, the agent learns optimal decision-making strategies by exploring various audit cases and adjusting its policy.
+  -> A GRU layer to process sequential risk data.
+  -> An Attention layer to determine which past states are most relevant.
+  -> Fully connected layers (FC layers) for Q-value prediction.
+  -> During training, the agent learns optimal decision-making strategies by exploring various audit cases and adjusting its policy.
 
 Reinforcement Learning Process: Training the Audit Agent
 The agent is trained using the Deep Q-Learning algorithm, following these steps:
 
-Experience Replay: The agent stores past experiences in memory and samples random batches for training, reducing correlation between consecutive decisions.
-Epsilon-Greedy Exploration: The agent initially explores different actions randomly but gradually shifts towards exploiting learned strategies by reducing exploration over time.
-Q-Learning Updates: The model updates Q-values using the Bellman equation, ensuring future rewards influence present decisions.
-Gradient Descent Optimization: The network minimizes prediction errors using Mean Squared Error (MSE) loss and Adam optimizer.
+  -> Experience Replay: The agent stores past experiences in memory and samples random batches for training, reducing correlation between consecutive decisions.
+  -> Epsilon-Greedy Exploration: The agent initially explores different actions randomly but gradually shifts towards exploiting learned strategies by reducing exploration over time.
+  -> Q-Learning Updates: The model updates Q-values using the Bellman equation, ensuring future rewards influence present decisions.
+  -> Gradient Descent Optimization: The network minimizes prediction errors using Mean Squared Error (MSE) loss and Adam optimizer.
 
 Evaluation & Visualization of Agent Performance
 After training, the agent is evaluated on new audit cases to assess decision-making efficiency.
 
-Performance Metrics: The agent's total rewards over multiple episodes are tracked to measure improvement.
-Action Distribution Plot: Displays how often the agent chooses to audit or skip cases.
-Risk Level vs. Action Scatter Plot: Shows the correlation between risk factors and the agent’s decisions, ensuring logical alignment with the model’s learning.
-Exploration Decay: The gradual reduction in random actions ensures that the agent transitions from exploration to exploitation.
+  -> Performance Metrics: The agent's total rewards over multiple episodes are tracked to measure improvement.
+  -> Action Distribution Plot: Displays how often the agent chooses to audit or skip cases.
+  -> Risk Level vs. Action Scatter Plot: Shows the correlation between risk factors and the agent’s decisions, ensuring logical alignment with the model’s learning.
+  -> Exploration Decay: The gradual reduction in random actions ensures that the agent transitions from exploration to exploitation.
 
 Saving & Testing the Model
 The trained RL model is saved and reloaded for future use.
