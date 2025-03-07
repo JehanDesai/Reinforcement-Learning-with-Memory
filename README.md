@@ -18,9 +18,13 @@ To train an intelligent audit agent, we implement a Deep Q-Network (DQN) with GR
 GRU (Gated Recurrent Unit) handles sequential data, allowing the agent to retain past information.
 Attention Mechanism enhances decision-making by assigning higher importance to critical risk factors.
 The model architecture includes:
+
   -> A GRU layer to process sequential risk data.
+
   -> An Attention layer to determine which past states are most relevant.
+  
   -> Fully connected layers (FC layers) for Q-value prediction.
+  
   -> During training, the agent learns optimal decision-making strategies by exploring various audit cases and adjusting its policy.
 
 Reinforcement Learning Process: Training the Audit Agent
