@@ -13,7 +13,33 @@ A weighted sum of the risk factors determines the risk score, and rewards are as
 The episode terminates after a predefined number of steps.
 
 Deep Q-Network Agent with GRU and Attention
+
+
 To train an intelligent audit agent, we implement a Deep Q-Network (DQN) with GRU and Attention.
+
+WHY?? -> DQN alone is powerful, but it lacks the ability to handle sequential dependencies and efficiently focus on key information. DQN is great for learning optimal Q-values through experience replay, but it treats each state as independent.
+
+        No Memory → DQN does not retain information from previous states.
+        Flat Representation → It assumes that the current state contains all necessary information.
+        Inefficient for Temporal Dependencies → Tax audits are often based on patterns over time, which DQN cannot naturally capture.
+
+GRU (Gated Recurrent Unit) solves the memory issue by allowing the model to retain past information.
+
+
+        Maintains Historical Context → GRU remembers patterns in risk factors over multiple steps.
+        Detects Fraudulent Behavior Over Time → Instead of treating each case as new, it tracks evolving risk trends.
+        Handles Partial Observability → Some risk factors might not be clear in a single step, but GRU helps infer missing details from past audits.
+
+
+Even though GRU helps retain past states, it treats all past information equally, which is inefficient.
+
+Some past events are more important than others for making decisions.
+Attention helps the model focus on critical risk factors instead of treating all past cases equally.
+
+        Selectively Focuses on Key Events → Instead of using all past states, it assigns more weight to significant ones.
+        Improves Decision Accuracy → Helps the model audit cases with actual high risk instead of being overwhelmed by irrelevant past data.
+        Enhances Explainability → We can interpret which risk factors influenced the audit decision.
+
 
 GRU (Gated Recurrent Unit) handles sequential data, allowing the agent to retain past information.
 Attention Mechanism enhances decision-making by assigning higher importance to critical risk factors.
